@@ -33,7 +33,7 @@ async def run_lms_interaction(user_query):
         await client.exit_stack.aclose()
 
 # --- Main UI ---
-user_query = st.text_input("Ask your LMS", placeholder="e.g., Which instructor is teaching Alice?")
+user_query = st.text_input("Ask your LMS", placeholder="e.g., Which instructor is teaching Alice Johnson?")
 
 if st.button("Run Query") and user_query:
     with st.spinner("Connecting to LMS Server..."):
