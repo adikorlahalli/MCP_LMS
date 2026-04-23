@@ -26,34 +26,19 @@ The system follows a Client-Server model over MCP:
    ```bash
    conda create --name "MCP-LMS" python=3.10
    conda activate MCP-LMS
+   cd MCP_Complete_Final
    pip install -r requirements.txt
    ```
 2. **Environment Configuration**:
-   Create a \`.env\` file and add your Google API key:
-   \`\`\`env
+   Create a `.env` file and add your Google API key:
+   ```
    GOOGLE_API_KEY=your_actual_api_key_here
-   \`\`\`
+   ```
+   The key can be obtained from the [Google AI Studio](https://aistudio.google.com/api-keys).
+   Click "Create API Key" and copy the generated key into your `.env` file.
 
 ## 🚀 How to Run
 Launch the Streamlit dashboard:
-\`\`\`bash
+```bash
 streamlit run app.py
-\`\`\`
-EOF
-
-# 3. Create .gitignore (to keep your repo clean)
-cat << 'EOF' > .gitignore
-.DS_Store
-.env
-__pycache__/
-venv/
-*.pyc
-EOF
-
-# 4. Create a .env template (reminds you to add your key)
-if [ ! -f .env ]; then
-  echo "GOOGLE_API_KEY=your_api_key_here" > .env
-  echo "Created .env template."
-fi
-
-echo "✅ All files (requirements.txt, README.md, .gitignore, .env) have been created in one go!"
+```
