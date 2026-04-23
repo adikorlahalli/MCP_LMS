@@ -23,9 +23,11 @@ The system follows a Client-Server model over MCP:
 
 ## ⚙️ Setup & Installation
 1. **Install Dependencies**:
-   \`\`\`bash
+   ```bash
+   conda create --name "MCP-LMS" python=3.11
+   conda activate MCP-LMS
    pip install -r requirements.txt
-   \`\`\`
+   ```
 2. **Environment Configuration**:
    Create a \`.env\` file and add your Google API key:
    \`\`\`env
