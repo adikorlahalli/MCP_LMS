@@ -38,7 +38,9 @@ The system follows a Client-Server model over MCP:
    Click "Create API Key" and copy the generated key into your `.env` file.
 
 ##  How to Run
-Launch the Streamlit dashboard:
+Launch the Streamlit dashboard
+
+In the MCP_LMS folder run the following command:
 ```bash
-In the MCP_LMS folder run streamlit run src/app.py
+streamlit run src/app.py
 ```
