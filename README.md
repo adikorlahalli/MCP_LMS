@@ -40,5 +40,5 @@ The system follows a Client-Server model over MCP:
 ## 🚀 How to Run
 Launch the Streamlit dashboard:
 ```bash
-streamlit run app.py
+In the MCP_LMS folder run streamlit run src/app.py
 ```

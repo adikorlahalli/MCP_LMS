@@ -154,7 +154,7 @@ MODEL_ID = "gemini-2.5-flash-lite" # Use your preferred model ID
 
 @mcp.tool()
 def get_student_gpa(name: str) -> str:
-    with open("data.csv", newline="") as f:
+    with open("../data/data.csv", newline="") as f:
         reader = csv.DictReader(f)
         for row in reader:
             if row["Name"].lower() == name.lower():
@@ -163,7 +163,7 @@ def get_student_gpa(name: str) -> str:
 
 @mcp.tool()
 def analyze_student_progress(name: str) -> str:
-    with open("data.csv", newline="") as f:
+    with open("../data/data.csv", newline="") as f:
         reader = csv.DictReader(f)
         for row in reader:
             if row["Name"].lower() == name.lower():
@@ -200,9 +200,9 @@ def run_sql_on_csv(query: str) -> str:
     try:
         # Load all CSVs into the in-memory database
         conn = sqlite3.connect(":memory:")
-        pd.read_csv("data.csv").to_sql("students", conn, index=False, if_exists="replace")
-        pd.read_csv("courses.csv").to_sql("courses", conn, index=False, if_exists="replace")
-        pd.read_csv("enrollments.csv").to_sql("enrollments", conn, index=False, if_exists="replace")
+        pd.read_csv("../data/data.csv").to_sql("students", conn, index=False, if_exists="replace")
+        pd.read_csv("../data/courses.csv").to_sql("courses", conn, index=False, if_exists="replace")
+        pd.read_csv("../data/enrollments.csv").to_sql("enrollments", conn, index=False, if_exists="replace")
 
         cursor = conn.cursor()
         cursor.execute(query)

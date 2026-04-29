@@ -11,7 +11,7 @@ async def run_lms_interaction(user_query):
     client = MCPClient()
     try:
         # 1. Connect to the server
-        await client.connect_to_server("server.py")
+        await client.connect_to_server("src/server.py")
         
         # 2. Get SQL from the prompt
         sql_resp = await client.call_tool("get_sql_from_prompt", {"p": user_query})
@@ -54,7 +54,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Student Directory")
     # Updated to 'width' to resolve the deprecation warning
-    st.dataframe(pd.read_csv("data.csv"), width='stretch')
+    st.dataframe(pd.read_csv("data/data.csv"), width='stretch')
 with col2:
     st.subheader("Course Catalog")
-    st.dataframe(pd.read_csv("courses.csv"), width='stretch')
+    st.dataframe(pd.read_csv("data/courses.csv"), width='stretch')
